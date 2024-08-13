@@ -1,0 +1,33 @@
+@mixin flex-col-gap($col-gap) {
+    display: flex;
+    flex-direction: column;
+    column-gap: $col-gap;
+}
+
+@mixin flex-row-gap($row-gap) {
+    display: flex;
+    row-gap: $row-gap;
+}
+
+@mixin flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-center-hz {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flex-center-vl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

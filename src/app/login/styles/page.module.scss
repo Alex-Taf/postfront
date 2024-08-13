@@ -1,0 +1,18 @@
+@import "../../mixins.scss";
+
+$section-size: 400px;
+
+.login {
+    @include flex-center;
+    height: 100dvh;
+
+    &-form {
+        width: $section-size;
+
+        &-actions {
+            margin-top: 10px;
+            display: flex;
+            column-gap: 4px;
+        }
+    }
+}

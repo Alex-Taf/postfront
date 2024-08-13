@@ -1,0 +1,75 @@
+@import "../../mixins.scss";
+
+$posts-content-height: 315px;
+$posts-content-width: 1000px;
+
+.wrapper {
+    @include flex-col;
+    padding: 1rem;
+}
+
+.posts {
+    @include flex-center;
+    height: 100dvh;
+
+    &-wrapper {
+        @include flex-row-gap(6px);
+    }
+
+    &-content {
+        @include flex-row-gap(4px);
+        flex-wrap: wrap;
+        column-gap: 20px;
+        height: $posts-content-height;
+        width: $posts-content-width;
+
+        &-card {
+            transition: all 0.6ms;
+        }
+    }
+
+    $add-btn-options: (height: 100%,
+                        width: 50px,
+                        btn-color: #d6d6d6,
+                        btn-color-hover: #ececec,
+                        icon-color: #808080,
+                        radius: 16px);
+
+    &-add {
+        @include flex-center-vl;
+        justify-content: center;
+        width: map-get($map: $add-btn-options, $key: width);
+        height: map-get($map: $add-btn-options, $key: height);
+        background-color: map-get($map: $add-btn-options, $key: btn-color);
+        border-radius: map-get($map: $add-btn-options, $key: radius);
+        cursor: pointer;
+
+        &:hover {
+            background-color: map-get($map: $add-btn-options, $key: btn-color-hover);
+        }
+
+        span {
+            font-size: 36px;
+            color: map-get($map: $add-btn-options, $key: icon-color);
+        }
+    }
+}
+
+.post {
+    @include flex-center;
+    margin-top: 40px;
+    height: 100%;
+
+    $comment-section-width: 700px;
+
+    &-comments {
+        width: $comment-section-width;
+
+        &-item {
+            display: flex;
+            column-gap: 20px;
+            width: $comment-section-width;
+            margin-bottom: 12px;
+        }
+    }
+}
